@@ -1,0 +1,23 @@
+site_name: VISTA Docs
+theme:
+  name: material
+  #custom_dir: overrides
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+extra_css:
+  - css/custom.css
+
+nav:
+  - Home: index.md
+  - Automation Projects:
+      - IKE Log Analyzer:
+          - Introduction: ike-log-analyzer/index.md
+          - What debugs to collect: ike-log-analyzer/debugs.md
+          - Developer Notes: ike-log-analyzer/dev.md
+      - Mobius Troubleshooting Flows:
+          - Mobius: mobius/index.md
+          - Pseudocoding: mobius/pseudocoding.md
