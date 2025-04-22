@@ -87,3 +87,62 @@ if re.search(ike_debug_id_pattern, lineitem).group(1) == ike_debug_instance_id a
 ```
 
 This ensures that while we catagorize and print the original line from the debug file in <span style="color:orange;">orange</span>, the strong that will be used for matching with data_model.py for the AI query will be the one as defined with `ai_string`.
+
+---
+
+---
+
+## 💡 Jenkins Access for IKE-DEBUGGER-Tools
+
+### Accessing Jenkins
+
+Jenkins is hosted internally (for access please contact jaskirat/vishal/lukas) and **can only be accessed on the on-prem Vancouver network** at:
+
+👉 [http://10.119.200.83:8080/](http://10.119.200.83:8080/)
+
+---
+
+###  Main Pipeline: `GUI_IKE_FINAL`
+
+This is the primary pipeline used to validate all test cases for `IKE-DEBUGGER-Tools`.
+
+###  What it Does:
+1. **Runs verbose `pytest`**  
+   - Validates all tests and use-cases.
+2. **Runs `pytest` again with coverage**  
+   - Generates a code coverage report.
+3. **Executes a custom Python script**  
+   - Verifies that code coverage is **100%**.
+
+---
+
+###  What Happens on Failures
+
+####  ❌ Test Failures:
+- An email is sent to Devs.
+- The pipeline stops immediately.
+
+#### ⚠️ Coverage Below 100%:
+- The build is marked as **UNSTABLE**.
+- An email is sent with the actual coverage percentage.
+
+#### 🛑 Coverage Parsing Failed:
+- The pipeline fails with an error.
+
+---
+
+### Pipeline Schedule
+
+- Runs **daily at ~1:00 AM** automatically.
+- Runs **Trying to Push to Prod** 
+---
+
+### How to Run a Build Manually
+
+1. Log into the Jenkins web UI.
+2. Click on the **`GUI_IKE_FINAL`** pipeline on the dashboard.
+3. Click **"Build Now"** on the left panel.
+4. Monitor progress in **Build History**.
+5. Click the build number (e.g., `#23`) → **Console Output** to view logs.
+6. Wait for completion:
+   - ✅ SUCCESS indicates a successful build.

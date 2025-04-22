@@ -71,6 +71,24 @@ Some steps require dynamic decision-making, such as analyzing speed test results
 ```
 The logic engine will determine the next step based on inputs. 
 
+## 6. 💡 Collapsible Info Section
+Use the "info" key to include optional context/information shown in a collapsible format at the top-right of the page.
+
+```python
+"info": "Use this step to understand if there's an upstream routing issue."
+```
+
+## 7. 🛠️ Highlighted Debug Commands
+Wrap CLI debug commands with {debug_start} and {debug_end} for highlighted, copy-enabled display.
+
+```python
+{debug_start}
+ping PC2 –n 30 –l 1472
+{debug_end}
+```
+## 8. 📝 Debug Text Area (Paste or Upload Logs)
+To allow pasting/uploading of debug logs (which will be saved in the report), include      {text_area_html} in questions field infomration.
+
 ## ✅ Conclusion 
 By following this guide, engineers can create structured, interactive troubleshooting workflows for various use cases. The modular design allows easy customization and extension for different scenarios.
 
