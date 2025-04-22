@@ -2,7 +2,7 @@
 
 ## 🎥 **Overview Video**
 <video controls width="600">
-  <source src="/assets/videos/mobius-intro.mp4" type="video/mp4">
+  <source src="/assets/videos/mobius-intro-720p.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
