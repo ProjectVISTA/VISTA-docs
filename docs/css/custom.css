@@ -6,3 +6,12 @@ pre {
     padding: 10px;
     border-radius: 5px;
 }
+.md-copyright {
+    color: #000000de
+}
+.md-footer a {
+    color: #000000de !important;
+  }
+  .md-footer a:hover {
+    color: #000000de !important;
+  }
