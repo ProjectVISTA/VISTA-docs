@@ -146,3 +146,33 @@ This is the primary pipeline used to validate all test cases for `IKE-DEBUGGER-T
 5. Click the build number (e.g., `#23`) → **Console Output** to view logs.
 6. Wait for completion:
    - ✅ SUCCESS indicates a successful build.
+
+## 💡Writing Unit Tests for New Parser Additions
+
+1. **Fork the Main Prod Repo**  
+   Contributors should begin by forking the main production repository ([this one](https://github.com/jas21068/gui_ike_debugger)).
+
+2. **Develop the Parser Addition**  
+   Once the new parser addition is complete, they must also provide:
+
+        -> A sample **IKE log file** relevant to the use case they are adding.
+
+        -> A list of the **expected display strings** for validation.
+
+3. **Open a Pull Request to the `testing` Branch**  
+   We will create a new `testing` branch in the repo.  
+   Contributors should open a **pull request (PR)** to this branch with their changes.
+
+4. **Review and Testing**  
+
+        -> The PR will be reviewed by one of us (Jaskirat/Vishal/Lukas).
+
+        -> We'll run the full **test suite**.
+
+        -> JSON test files will be generated via the Jenkins job.
+
+        -> We'll verify the output to ensure everything looks good.
+
+5. **Merge to Production**  
+   Once verified, one of us will **merge the changes into the `prod` branch**.
+
