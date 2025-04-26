@@ -49,7 +49,7 @@ To include checkboxes for user verification, insert {checkbox_html} in the quest
 ```python
 {input_field('Single users affected or multiple?')}
 ```
-
+Implemented in SSLVPN Flows (has corresponding code additions in app.py - for report addition and troubleshoot.html - JS)
 Corresponding helper function:
 ```python
 def input_field(name, value=""):
@@ -60,6 +60,7 @@ def input_field(name, value=""):
 ```python
 {dropdown("hardware platform", "Select the hardware model: ", ['Option1','Option2','Option3'])}
 ```
+Implemented in RMA Assist Flow (has corresponding code additions in app.py - for report addition and troubleshoot.html - JS)
 Corresponding helper fuction:
 ```python
 def dropdown(name, text, options):
