@@ -9,7 +9,7 @@ The pseudocode acts as a **blueprint** for engineers to design interactive troub
 
 ---
 
-## 🧱 1. Structure of Pseudocode
+## 🧱 Structure of Pseudocode
 
 Each troubleshooting workflow is represented as a **list of dictionaries**, where each dictionary defines one step. Each step includes the following keys:
 
@@ -36,7 +36,7 @@ troubleshooting_steps = [
 ]
 ```
 
-## 2. ☑️  Using Checkboxes in Questions 
+## ☑️  Using Checkboxes in Questions 
 To include checkboxes for user verification, insert {checkbox_html} in the question field. Example: 
 ```python
 "question": f''' 
@@ -44,7 +44,34 @@ To include checkboxes for user verification, insert {checkbox_html} in the quest
 {checkbox_html} Verify the routing table. 
 ''' 
 ```
-## 3. 🧮 Implementing Input Fields 
+
+## Using text input:
+```python
+{input_field('Single users affected or multiple?')}
+```
+
+Corresponding helper function:
+```python
+def input_field(name, value=""):
+    return f'<input type="text" step="0.01" name="{name}" value="{value}" style="width: 100px; padding: 5px; margin: 5px;">'
+```
+
+## Using dropdowns:
+```python
+{dropdown("hardware platform", "Select the hardware model: ", ['Option1','Option2','Option3'])}
+```
+Corresponding helper fuction:
+```python
+def dropdown(name, text, options):
+    html_code = f'<label for="{name}">{text}</label>'
+    html_code += f'<select name="{name}" id="{name}">'
+    html_code += '<option value="">--Please choose an option--</option>'
+    for entry in options:
+        html_code += f'<option value="{entry}">{entry}</option>'
+    html_code += '</select>'
+    return html_code
+```
+## 🧮 Implementing Input Fields 
 For cases requiring user input (e.g., speed test results), define input_fields using predefined labels: 
 <br>`"input_fields": ["PC Download Speed (Mbps)", "PC Upload Speed (Mbps)"]`
 ### Predefined fields: 
@@ -55,11 +82,12 @@ For cases requiring user input (e.g., speed test results), define input_fields u
 - Speed_test_3_download_name = 'SSL-VPN Download Speed (Mbps)' 
 - Speed_test_3_upload_name = 'SSL-VPN Upload Speed (Mbps)' 
 
-## 4. 🔁  Defining the Next Step Logic 
+## 🔁  Defining the Next Step Logic 
 The next field maps user selections to the corresponding next step. Example: 
 "next": {"Yes": "Investigate ISP", "No": "Check CPU/Memory"} 
 For dynamically determined steps, leave next empty and handle logic separately. 
-## 5. 🤖 Special Cases: Auto-Generated Steps 
+
+## 🤖 Special Cases: Auto-Generated Steps 
 Some steps require dynamic decision-making, such as analyzing speed test results. In such cases, set next to an empty dictionary: 
 ```python
 { 
@@ -71,14 +99,14 @@ Some steps require dynamic decision-making, such as analyzing speed test results
 ```
 The logic engine will determine the next step based on inputs. 
 
-## 6. 💡 Collapsible Info Section
+## 💡 Collapsible Info Section
 Use the "info" key to include optional context/information shown in a collapsible format at the top-right of the page.
 
 ```python
 "info": "Use this step to understand if there's an upstream routing issue."
 ```
 
-## 7. 🛠️ Highlighted Debug Commands
+## 🛠️ Highlighted Debug Commands
 Wrap CLI debug commands with {debug_start} and {debug_end} for highlighted, copy-enabled display.
 
 ```python
@@ -86,7 +114,7 @@ Wrap CLI debug commands with {debug_start} and {debug_end} for highlighted, copy
 ping PC2 –n 30 –l 1472
 {debug_end}
 ```
-## 8. 📝 Debug Text Area (Paste or Upload Logs)
+## 📝 Debug Text Area (Paste or Upload Logs)
 To allow pasting/uploading of debug logs (which will be saved in the report), include      {text_area_html} in questions field infomration.
 
 ## ✅ Conclusion 
