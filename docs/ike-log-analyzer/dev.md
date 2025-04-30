@@ -1,5 +1,56 @@
 # IKE Debugger – Developer Details
 
+## Setting up your developer environment:
+
+It is highly suggested to use Linux or Windows Subsystem for Linux(WSL) for development on this application, all development to this point has been on WSL/MacOS and development has not been tested with Windows.
+
+Refer here for information on setting up WSL: [https://learn.microsoft.com/en-us/windows/wsl/install](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+Once you've gotten your Linux/WSL/MacOS development environment setup for the application, please follow these steps to begin adding test cases:
+
+### 1. Request access for development repository and fork it.
+
+In order to fork the repository used for developing new test cases before they get pushed to prod, you will need to request access for Lukas's repository at [https://github.com/lvannstruth-ftnt/gui_ike_debugger_reforked](https://github.com/lvannstruth-ftnt/gui_ike_debugger_reforked). You can reach Lukas on Teams or via Email at lstruth@fortinet.com. Once Lukas provides you access, please create a fork of the 'gui_ike_debugger_reforked' repository following these instructions: [https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
+
+### 2. Clone your new fork:
+
+Follow these instructions for your newly created fork to download the repository locally: [https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+
+### 3. Setup your Python virtual environment:
+
+Once you have the repository cloned to your machine, enter the root directory of the repository and run the following commands to setup your virtual environment for development:
+
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+These commands setup a virtual environment, activate the virtual environment script and then installs all the required libraries for the project to run.
+
+### 4. Running the server and testing:
+
+With your virtual environment setup, you can now run the server from the root directory of the project with the following command:
+
+```bash
+flask run
+```
+
+From here you can add business logic in the `ike_parser` function in `src/app.py` as required for your new test case. 
+
+### 5. Submitting a Pull Request to merge your changes:
+
+After you have finished validating your changes, please submit a pull request for Lukas's `gui_ike_debugger_reforked` repository on github following these instructions: [https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
+
+Please ensure to include the following in your pull request:
+
+1. The ticket number or mantis for which you are adding a test case.
+2. The log file you have been using to test your changes.
+
+Once the PR is opened, one of the core developers will review your request and provide any feedback if necessary or merge your changes if it passes test validation.
+
+Please reach out to Lukas if you run into any issues with setting up your development environment.
+
 ## How classes related to results have been defined:
 ### 💡 What the result class looks like:
 
