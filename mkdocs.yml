@@ -21,3 +21,4 @@ nav:
       - Mobius Troubleshooting Flows:
           - Mobius: mobius/index.md
           - Pseudocoding: mobius/pseudocoding.md
+          - How to create a new Mobius flow: mobius/new-mobius-flow.md
