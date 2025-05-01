@@ -14,6 +14,7 @@ extra_css:
 nav:
   - Home: index.md
   - Automation Projects:
+      - List of Projects: list-of-projects.md
       - IKE Log Analyzer:
           - Introduction: ike-log-analyzer/index.md
           - What debugs to collect: ike-log-analyzer/debugs.md
@@ -22,3 +23,5 @@ nav:
           - Mobius: mobius/index.md
           - Pseudocoding: mobius/pseudocoding.md
           - How to create a new Mobius flow: mobius/new-mobius-flow.md
+  - VISTA - Dev Notes:
+      - Integrate ticket ID: vista-dev-notes/forticare-ticket.md
