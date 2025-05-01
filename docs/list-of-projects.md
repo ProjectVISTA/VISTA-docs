@@ -7,7 +7,7 @@
 | Sample Mobius Flow  | | [http://10.21.3.250:8900/](http://10.21.3.250:8900/) |
 | SSL-VPN Slow Internet Troubleshooting Assistant  | | [http://10.21.3.250:8866/](http://10.21.3.250:8866/) |
 | SSL-VPN Slow Data Transfer Assistant  | | [http://10.21.3.250:8867/](http://10.21.3.250:8867/) |
-| S2S IPSEC Troubleshooting Assistant  | | [Launch](http://10.21.3.250:8869/) |
+| S2S IPSEC Troubleshooting Assistant  | | [http://10.21.3.250:8869/](http://10.21.3.250:8869/) |
 | LAN Slow Internet Troubleshooting Assistant  | | [http://10.21.3.250:8868/](http://10.21.3.250:8868/) |
 | DIALUP IPSEC Troubleshooting Assistant  | | [http://10.21.3.250:8873/](http://10.21.3.250:8873/) |
 | DIALUP IPSEC Data Transfer Troubleshooting Assistant  | | [http://10.21.3.250:8874/](http://10.21.3.250:8874/) |
