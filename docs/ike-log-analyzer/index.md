@@ -17,7 +17,7 @@ This tool processes an IKE debug log file and **automatically highlights potenti
 
 ## 🛠️ Accessing the Tool
 
-* The IKE Log Analyzer is currently accessible via VPN to either Ottawa or Vancouver at the IP address <a href="http://10.21.3.250:8888" target="_blank">`10.21.3.250:8863`</a> or from our <a href="http://10.21.3.250:8863/" target="_blank">homepage</a>.
+* The IKE Log Analyzer is currently accessible via VPN to either Ottawa or Vancouver at the IP address <a href="http://10.128.202.246:8888" target="_blank">`10.128.202.246:8863`</a> or from our <a href="http://10.128.202.246:8863/" target="_blank">homepage</a>.
 * Vancouver VPN: `van-vpn1.myfortinet.com:443 `
 * Ottawa VPN: `ott-vpn2.myfortinet.com:10443`
 

@@ -7,8 +7,8 @@ This is the central hub for all our Project VISTA tools' documentation.
 
 ## 🌐 How to Access Project VISTA Tools?
 
-- **VISTA Tools Homepage**: <a href="http://10.21.3.250:8863/" target="_blank">Access our homepage and automation projects</a>  
-- The automation projects are accessible via VPN to either Ottawa or Vancouver at the following IP address: `10.21.3.250:8863`
+- **VISTA Tools Homepage**: <a href="http://10.128.202.246:8863/" target="_blank">Access our homepage and automation projects</a>  
+- The automation projects are accessible via VPN to either Ottawa or Vancouver at the following IP address: `10.128.202.246:8863`
     - Vancouver VPN: `van-vpn1.myfortinet.com:443`
     - Ottawa VPN: `ott-vpn2.myfortinet.com:10443`
 

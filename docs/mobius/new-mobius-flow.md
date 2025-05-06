@@ -7,4 +7,4 @@ Headover to the [base Mobius repo on Git Hub](https://github.com/ProjectVISTA/Mo
 *Creating a new Mobius flow*
 
 !!! tip "tip"
-    You can also playaround with an instance of this repo running at [http://10.21.3.250:8900/](http://10.21.3.250:8900/)
+    You can also playaround with an instance of this repo running at [http://10.128.202.246:8900/](http://10.128.202.246:8900/)
