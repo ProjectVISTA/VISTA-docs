@@ -16,9 +16,23 @@ In order to fork the repository used for developing new test cases before they g
 
 Follow these instructions for your newly created fork to download the repository locally: [https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
-### 3. Setup your Python virtual environment:
+### 3. Setup your Python/Postgres installation(Ubuntu):
 
-Once you have the repository cloned to your machine, enter the root directory of the repository and run the following commands to setup your virtual environment for development:
+The following steps apply both for bare-metal Ubuntu as well as WSL Ubuntu.
+
+You will need to install the following packages for Python development with the following instructions to function:
+
+```bash
+sudo apt update
+sudo apt upgrade 
+sudo apt install python3.10-venv python-is-python3 postgresql
+```
+
+This installs the python venv package required for python development, applies the system alias to make the 'python' command run python3, and installs postgresql for the database.
+
+### 4. Setup your Python virtual environment:
+
+Once you have the repository cloned to your machine and the required packages installed, enter the root directory of the repository and run the following commands to setup your virtual environment for development. 
 
 ```bash
 python -m venv venv
@@ -28,17 +42,61 @@ pip install -r requirements.txt
 
 These commands setup a virtual environment, activate the virtual environment script and then installs all the required libraries for the project to run.
 
-### 4. Running the server and testing:
+### 5. Setup PostgresSQL Database:
 
-With your virtual environment setup, you can now run the server from the root directory of the project with the following command:
+In order for the flask app to run successfully, PostgreSQL needs to be setup to run locally so the app can successfully record usage/feedback logs. You can refer to the 'instantiate_db_example.bash' command for example commands that Lukas used for his development environment, but generally speaking you need to run the following commands to setup your Linux user as a postgres user(so they can access the database)
+
+```bash 
+lukas@lvs-ubuntu-ems$
+lukas@lvs-ubuntu-ems$ sudo -i -u postgres
+postgres@lvs-ubuntu-ems:~$ createuser --interactive
+Enter name of role to add: lukas
+Shall the new role be a superuser? (y/n) y
+```
+
+When prompted to 'Enter name of role to add:', enter your username. For my Ubuntu VM here, my username is 'lukas'.
+
+After the Postgres user is setup, you need to run the following commands to setup a Postgres user for the application to use:
+
+```bash
+psql postgres lukas --command "CREATE USER ike_user WITH PASSWORD 'ike_psk';"
+psql postgres lukas --command "CREATE DATABASE usage_logs OWNER ike_user;"
+psql postgres lukas --command "GRANT ALL PRIVILEGES ON DATABASE usage_logs TO ike_user;"
+```
+
+Replace 'lukas' in these commands with the name of your new Postgres user created in the previous commands.
+
+After the database is created, you need to add a .env file to the root directory of your fork for the database authentication credentials. For the 'ike_user' Postgres user created above, use the following entry in your project's .env file. 
+
+```
+DB_URI=postgresql://ike_user:ike_psk@localhost:5432/usage_logs
+```
+
+Finally, the postgres server must be started on your machine.
+
+On Ubuntu, use the following command:
+
+```bash
+systemctl enable --now postgresql
+```
+
+On WSL, use the following command:
+
+```bash
+sudo service start postgresql
+```
+
+### 6. Running the server and testing:
+
+With your virtual environment setup, you can now run the server from the root directory of the project with the following command. Ensure that you have already run the 'source venv/bin/activate command as specificed in step 4 so that your shell has the correct python libraries imported.
 
 ```bash
 flask run
 ```
 
-From here you can add business logic in the `ike_parser` function in `src/app.py` as required for your new test case.
+From here you can add business logic in the `ike_parser` function in `src/app.py` as required for your new test case. Note that a refactor for the parser is in progress by Lukas, he will update this documentation when this is completed.
 
-### 5. Submitting a Pull Request to merge your changes:
+### 7. Submitting a Pull Request to merge your changes:
 
 After you have finished validating your changes, please submit a pull request for Lukas's `gui_ike_debugger_reforked` repository on github following these instructions: [https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
 
@@ -51,7 +109,7 @@ Please ensure to include the following in your pull request:
 
 Once the PR is opened, one of the core developers will review your request and provide any feedback if necessary or merge your changes if it passes test validation.
 
-Please reach out to Lukas if you run into any issues with setting up your development environment.
+Please reach out to Lukas/Jaskirat/Vishal if you run into any issues with setting up your development environment.
 
 ## How classes related to results have been defined:
 ### 💡 What the result class looks like:
