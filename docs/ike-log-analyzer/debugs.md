@@ -37,6 +37,7 @@ di vpn ike log filter rem-addr4/dst-addr4 'peer IP'
 di de app ike -1
 di de app samld -1
 di de app fnbamd -1
+di de app eap_proxy -1
 di de app authd 7
 di de en
 </pre>
