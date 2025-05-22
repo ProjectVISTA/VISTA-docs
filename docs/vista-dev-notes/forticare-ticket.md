@@ -28,8 +28,9 @@ db = SQLAlchemy()
 ```
 
 #### Create models.py as:
-from db import db
 ```python
+from db import db
+
 class TicketUsage(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     tool_name = db.Column(db.String(100), nullable=False)
@@ -68,16 +69,23 @@ In index(), make sure to allow POST (already done), and in troubleshoot():
 def troubleshoot():
     if request.method == "POST":
         ticket_id = request.form.get("ticket_id")
-        session["ticket_id"] = ticket_id  # store in session
+        if ticket_id:
+            session["ticket_id"] = ticket_id
+            usage = TicketUsage(
+                tool_name="S2S IPSEC Troubleshooting",
+                username=None,
+                ticket_id=ticket_id
+            )
+            db.session.add(usage)
+            db.session.commit()
 
-        # Log in DB
-        usage = TicketUsage(
-            tool_name="SSL-VPN Troubleshooter",
-            username=None,  # add username when auth is ready
-            ticket_id=ticket_id
-        )
-        db.session.add(usage)
-        db.session.commit()
+            # Reset session state here
+            session["current_step"] = 0
+            session["current_question"] = troubleshooting_steps[0]["question"]
+            session["report"] = []
+            session["inputs"] = {}
+
+            return redirect(url_for("troubleshoot"))
 ```
 
 #### In index.html:
