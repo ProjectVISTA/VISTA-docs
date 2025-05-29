@@ -15,7 +15,7 @@
 | DIALUP IPSEC Data Transfer Troubleshooting Assistant  | | [http://10.128.202.246:8874/](http://10.128.202.246:8874/) |
 | **NP Flows**  |         |  |
 | NP Troubleshooting Tool (NP7)  |         | [http://10.128.202.246:8870](http://10.128.202.246:8870) |
-| NP6 Troubleshooting Assistant  | | [http://10.128.202.246:8874/](http://10.128.202.246:8874/) |
+| NP6 Troubleshooting Assistant  | | [http://10.128.202.246:8871/](http://10.128.202.246:8871/) |
 | NP6XLite Troubleshooting Assistant  | | [http://10.128.202.246:8872/](http://10.128.202.246:8872/) |
 | **Misc**   |         |  |
 | Documentation Page | | [http://10.128.202.246:8000/](http://10.128.202.246:8000/) |
