@@ -20,6 +20,7 @@ Below is the list of automation tools available under Project VISTA:
 
 - **[IKE Log Analyzer](ike-log-analyzer/index.md)**: A powerful tool for analyzing IKE debug logs.
 - **[Mobius Troubleshooting Flows](mobius/index.md)**: A dynamic tool for troubleshooting network-related issues.
+- **[System Performance Analyzer](sys-perf-analyzer/index.md)**: A powerful tool for analyzing CPU/Memory/NPU debug logs.
 
 ---
 
