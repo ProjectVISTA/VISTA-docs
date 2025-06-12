@@ -19,6 +19,9 @@ nav:
           - Introduction: ike-log-analyzer/index.md
           - What debugs to collect: ike-log-analyzer/debugs.md
           - Developer Notes: ike-log-analyzer/dev.md
+      - System Performance Analyzer:
+          - Introduction: sys-perf-analyzer/index.md
+          - What debugs to collect: sys-perf-analyzer/debugs.md
       - Mobius Troubleshooting Flows:
           - Mobius: mobius/index.md
           - Pseudocoding: mobius/pseudocoding.md
