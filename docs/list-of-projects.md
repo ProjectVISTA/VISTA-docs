@@ -19,6 +19,7 @@
 | NP Troubleshooting Tool (NP7)  |         | [http://10.128.202.246:8870](http://10.128.202.246:8870) | /np7 |
 | NP6 Troubleshooting Assistant  | | [http://10.128.202.246:8871/](http://10.128.202.246:8871/) | /np6 |
 | NP6XLite Troubleshooting Assistant  | | [http://10.128.202.246:8872/](http://10.128.202.246:8872/) | /np6xlite |
+| NP7Lite Troubleshooting Assistant  | | [http://10.128.202.246:8870/](http://10.128.202.246:8870/) | /np7lite |
 | **Misc**   |         |  | |
 | Documentation Page | | [http://10.128.202.246:8000/](http://10.128.202.246:8000/) | /docs |
 | Dashboard Page | | | [http://10.128.202.246:8000/](http://10.128.202.246:9900/) | /dashboard |
