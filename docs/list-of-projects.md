@@ -4,7 +4,7 @@
 | **Home Page**   |         | [10.128.202.246:8863](10.128.202.246:8863) | |
 | **Analyzers & Parsers**   |         |  |
 | IKE Log Analyzer    | Parses and explains IKE logs and suggests next steps        | [10.128.202.246:8888](http://10.128.202.246:8888) | /ike |
-| Performance Analyzer    | Parses and explains Performance/NPU logs and suggests next steps        | [10.128.202.246:7777](http://10.128.202.246:7777) | /ike |
+| Performance Analyzer    | Parses and explains Performance/NPU logs and suggests next steps        | [10.128.202.246:7777](http://10.128.202.246:7777) | /performance-tool |
 | Log Visualizer   | Parses and explains FortiGate Logs       | [10.128.202.246:8801](http://10.128.202.246:8801) | /logVisualizer |
 | **Mobius Flows**   |         |  |
 | Sample Mobius Flow  | | [http://10.128.202.246:8900/](http://10.128.202.246:8900/) | /dummy-app/ |
