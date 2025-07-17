@@ -1,12 +1,12 @@
 # VISTA Apps:
-| Tool Name           | Description                         | Link                        |
+| Tool Name           | Description                         | Link                        | path |
 |---------------------|-------------------------------------|-----------------------------|
-| **Home Page**   |         | [10.128.202.246:8863](10.128.202.246:8863) |
+| **Home Page**   |         | [10.128.202.246:8863](10.128.202.246:8863) | |
 | **Analyzers & Parsers**   |         |  |
-| IKE Log Analyzer    | Parses and explains IKE logs and suggests next steps        | [10.128.202.246:8888](http://10.128.202.246:8888) |
+| IKE Log Analyzer    | Parses and explains IKE logs and suggests next steps        | [10.128.202.246:8888](http://10.128.202.246:8888) | /ike |
 | **Mobius Flows**   |         |  |
-| Sample Mobius Flow  | | [http://10.128.202.246:8900/](http://10.128.202.246:8900/) |
-| **Mobius Speed testing Home**   |         | [http://10.128.202.246:8864](http://10.128.202.246:8864) |
+| Sample Mobius Flow  | | [http://10.128.202.246:8900/](http://10.128.202.246:8900/) | /dummy-app/ |
+| **Mobius Speed testing Home**   |         | [http://10.128.202.246:8864](http://10.128.202.246:8864) | /mobius |
 | SSL-VPN Slow Internet Troubleshooting Assistant  | | [http://10.128.202.246:8866/](http://10.128.202.246:8866/) |
 | SSL-VPN Slow Data Transfer Assistant  | | [http://10.128.202.246:8867/](http://10.128.202.246:8867/) |
 | S2S IPSEC Troubleshooting Assistant  | | [http://10.128.202.246:8869/](http://10.128.202.246:8869/) |
