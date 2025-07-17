@@ -22,5 +22,5 @@
 | NP7Lite Troubleshooting Assistant  | | [http://10.128.202.246:8870/](http://10.128.202.246:8870/) | /np7lite |
 | **Misc**   |         |  | |
 | Documentation Page | | [http://10.128.202.246:8000/](http://10.128.202.246:8000/) | /docs |
-| Dashboard Page | | | [http://10.128.202.246:8000/](http://10.128.202.246:9900/) | /dashboard |
+| Dashboard Page | | | [http://10.128.202.246:9900/](http://10.128.202.246:9900/) | /dashboard |
 | Reserved | | 8901 | |
